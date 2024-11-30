@@ -1,17 +1,7 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import {Inter} from "next/font/google"
+import ConvexClerkProvider from "./providers/ConvexClerkProvider";
 
 export const metadata: Metadata = {
   title: "MicFlow",
@@ -20,7 +10,7 @@ export const metadata: Metadata = {
     icon: "/icons/logo.svg",
   }
 };
-
+const inter = Inter({subsets: ["latin"]});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={inter.className}
       >
-        {children}
+        <ConvexClerkProvider>{children}</ConvexClerkProvider>
       </body>
     </html>
   );

@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'frontcore.com'
+      },
+      {
+        protocol: 'https',
+        hostname: 'capable-dogfish-903.convex.cloud'
       }
     ]
   }
