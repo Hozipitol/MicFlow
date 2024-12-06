@@ -29,7 +29,7 @@ const GenerateThumbnail = ({setImage, setImageStorageId, image, imagePrompt, set
         try{
             const response = await handleGenerateThumbnail({prompt: imagePrompt});
             const blob = new Blob([response], {type: 'image/png'});
-            handleImage(blob, 'thumbnail-${uuidv4()}');
+             handleImage(blob, `thumbnail-${uuidv4()}`);
         }catch(error){
             console.log(error)
             toast({
