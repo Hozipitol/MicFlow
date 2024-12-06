@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import React from 'react'
 import { Button } from './ui/button'
 import Link from 'next/link'

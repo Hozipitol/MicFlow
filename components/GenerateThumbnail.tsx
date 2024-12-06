@@ -11,6 +11,7 @@ import { useToast } from '@/hooks/use-toast'
 import { useAction, useMutation } from 'convex/react'
 import { useUploadFiles } from '@xixixao/uploadstuff/react'
 import { api } from '@/convex/_generated/api'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {v4 as uuidv4} from 'uuid'
 
 const GenerateThumbnail = ({setImage, setImageStorageId, image, imagePrompt, setImagePrompt} : GenerateThumbnailProps) => {

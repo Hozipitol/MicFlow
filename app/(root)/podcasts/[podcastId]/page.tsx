@@ -1,10 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 
 import EmptyState from '@/components/EmptyState'
 import LoaderSpinner from '@/components/LoaderSpinner'
 import PodCastCard from '@/components/PodCastCard'
 import PodcastDetailPlayer from '@/components/PodCastDetailPlayer'
-import PodCastDetailPlayer from '@/components/PodCastDetailPlayer'
 import { api } from '@/convex/_generated/api'
 import { Id } from '@/convex/_generated/dataModel'
 import { useUser } from '@clerk/nextjs'
@@ -82,7 +82,7 @@ const PodcastDetails = ({params :{ podcastId }}: {params: {podcastId: Id<'podcas
               title='No Similar Podcasts Found'
               buttonLink='/discover'
               buttonText='Go Back Home'
-              description='We could not find any similar podcasts'
+              
             />
           )}
         

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -8,14 +9,12 @@ import { Button } from "@/components/ui/button"
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { create } from "domain"
 import { Label } from "@/components/ui/label"
 import {
   Select,
@@ -42,10 +41,10 @@ const formSchema = z.object({
   podcastDescription: z.string().min(2),
 })
 
-const voiceCategories = ['alloy', 'shimmer', 'nova', 'echo', 'fable', 'onyx'];
+const voiceCategories = ['alloy', 'shimmer', 'nova', 'echo', 'fable', 'onyx'] as const;
+type VoiceType = typeof voiceCategories[number];
 
 const CreatePodcast = () => {
-  const router = useRouter()
   const [voiceType, setVoiceType] = useState<string | null>(null)
   const[isSubmitting, setIsSubmitting] = useState(false)
   const[imagePrompt, setImagePrompt] = useState('')
@@ -55,6 +54,7 @@ const CreatePodcast = () => {
   const[audioDuration, setAudioDuration] = useState(0);
   const[voicePrompt, setVoicePrompt] = useState('')
   const {toast} = useToast()
+  const router = useRouter()
   const[imageStorageId, setImageStorageId] = useState<Id<"_storage"> | null>(null)
 
   const createPodcast = useMutation(api.podcasts.createPodcast)

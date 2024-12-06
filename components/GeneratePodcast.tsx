@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { GeneratePodcastProps } from '@/types'
 import React, { useState } from 'react'
 import { Label } from './ui/label'
@@ -45,6 +46,7 @@ const useGeneratedPodcast = ({setAudio, voiceType, voicePrompt, setAudioStorageI
             const file = new File([blob], fileName, {type: 'audio/mpeg'});
 
             const uploaded = await startUpload([file]);
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const storageId = (uploaded[0].response as any).storageId;
             setAudioStorageId(storageId);
             const audioUrl = await getAudioUrl({storageId});
