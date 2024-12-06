@@ -1,6 +1,7 @@
 
 import LeftSideBar from "@/components/LeftSideBar";
 import MobileNav from "@/components/MobileNav";
+import PodcastPlayer from "@/components/PodcastPlayer";
 import RightSideBar from "@/components/RightSideBar";
 import { Toaster } from "@/components/ui/toaster"
 
@@ -40,6 +41,7 @@ export default function RootLayout({
 
         <RightSideBar />
       </main>
+      <PodcastPlayer />
 
     </div>
   );
